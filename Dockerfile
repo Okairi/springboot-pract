@@ -7,6 +7,9 @@ WORKDIR /app
 # Copia los archivos del proyecto
 COPY . .
 
+# Da permisos de ejecución a mvnw
+RUN chmod +x mvnw
+
 # Compila el proyecto y genera el JAR
 RUN ./mvnw clean package -DskipTests
 
